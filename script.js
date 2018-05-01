@@ -10,7 +10,7 @@ fs.readFile('./input.txt', (err, data) => {
   const str = data.toString();
   let length = 0;
   for(let i = 0; i < str.length; i++) {
-    str.charAt(i) === '(' ? length++ : length--;
+    str[i] === '(' ? length++ : length--;
   }
   console.timeEnd('FunChallenge1');
   console.log(length);
@@ -22,14 +22,14 @@ fs.readFile('./input.txt', (err, data) => {
       return (err);
   }
   console.time('FunChallenge2');
-  
+
   let length = 0;
   const str = data.toString();
   let i = 0 ;
   let len = str.length;
   while (length >= 0 || i >= len) {
-    str[i] === '(' ? length++ : length--;
-    i++;
+    str[i++] === '(' ? length++ : length--;
+    // i++;
   }
 
   console.timeEnd('FunChallenge2');
